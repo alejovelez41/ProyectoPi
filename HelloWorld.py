@@ -12,5 +12,14 @@ print(datos.head())
 df=pd.DataFrame(datos)
 df.groupby("atención")["Edad"].mean().plot(kind="bar",legend="reverse")
 df.columns.values
+
 #print(df.describe(datos)) #esto muestra estad basicas
 print (df.columns.values)
+print ("la edad promedio es ",df.Edad.mean())
+print(df.pivot_table("Edad", "atención"))
+print(df.pivot_table("ID de caso", "Departamento o Distrito ", "atención", aggfunc ="count", margins="true"))
+#my_plot = datos.plot("Edad", "atención", kind="scatter")
+#plt.show()
+#plt.plot("Edad","atención")
+#plt.show("Edad","atención")
+#plt.ion("Edad","atención") #es como el .show pero mejor
