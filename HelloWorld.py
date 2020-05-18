@@ -10,8 +10,9 @@ print (datos)
 print("_-----_")
 print(datos.head())
 df=pd.DataFrame(datos)
-df.groupby("atención")["Edad"].mean().plot(kind="bar",legend="reverse")
+df.groupby("atención")["Edad"].count().plot(kind="bar",legend="reverse")
 df.columns.values
+#df.plot("atención", "Edad", kind="bar",legend="reverse")
 
 #print(df.describe(datos)) #esto muestra estad basicas
 print (df.columns.values)
@@ -23,3 +24,7 @@ print(df.pivot_table("ID de caso", "Departamento o Distrito ", "atención", aggf
 #plt.plot("Edad","atención")
 #plt.show("Edad","atención")
 #plt.ion("Edad","atención") #es como el .show pero mejor
+#plt.plot([1, 2, 3, 4])
+#plt.ylabel('some numbers')
+
+plt.show() #esta funciona
